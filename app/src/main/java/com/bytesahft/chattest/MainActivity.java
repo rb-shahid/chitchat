@@ -1,5 +1,6 @@
 package com.bytesahft.chattest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         name = (EditText) findViewById(R.id.edit_text_name);
         number = (EditText) findViewById(R.id.edit_text_phone_number);
         password = (EditText) findViewById(R.id.edit_text_password);
-        userName = (EditText) findViewById(R.id.edit_text_user_name);
+//        userName = (EditText) findViewById(R.id.edit_text_user_name);
         signUp.setOnClickListener(this);
         number.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -109,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+            startActivity(intent);
             return true;
         }
 
